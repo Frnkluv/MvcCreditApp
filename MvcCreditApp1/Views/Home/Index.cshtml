@@ -40,9 +40,22 @@
             }
         </table>
 
-        <p><a class="btn btn-default" href="/Home/CreateBid">
-            Подать заявку на получения кредита
+        <p>
+            <a class="btn btn-default" href="/Home/CreateBid">
+                Подать заявку на получения кредита
             </a>
         </p>
     </div>
+</div>
+
+<div>
+    <h5><b>Просмотр заявителей по кредиту</b></h5>
+</div>
+<div>
+    @using (Ajax.BeginForm("BidSearch", new AjaxOptions { UpdateTargetId = "results" }))
+    {
+        <input type="text" name="Name" />
+        <input type="submit" value="Поиск" />
+    }
+    <div id="results"> </div>
 </div>

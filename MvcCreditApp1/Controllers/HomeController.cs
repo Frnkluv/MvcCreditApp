@@ -19,6 +19,19 @@ namespace MvcCreditApp1.Controllers
             ViewBag.Credits = allCredits;
         }
 
+        public ActionResult BidSearch (string name)
+        {
+            var allBids = db.Bids.Where(b => b.CreditHead.Contains(name)).ToList();
+
+            if (allBids.Count == 0)
+            {
+                //return HttpNotFound();
+                return Content($"Указанный кредит {name} не найден.");
+            }
+
+            return PartialView(allBids);
+        }
+
         public ActionResult Index()
         {
             // Получение всех записей о кредитах

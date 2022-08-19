@@ -1,15 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "CreateBid";
+    ViewBag.Title = "Оставить заявку";
 }
-
-<h2>CreateBid</h2>
 
 <h3>Существующие заявки</h3>
 <table class="table">
     <tr>
-        <td><p>Имя</p></td>
-        <td><p>Тип кредита</p></td>
+        <td><p><b>Имя</b></p></td>
+        <td><p><b>Тип кредита</b></p></td>
     </tr>
     
     @foreach (var c in ViewBag.Bids)
